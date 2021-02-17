@@ -1,13 +1,20 @@
 extends TextureButton
 
-var currentPoints : int = 0
-var initialClickAmount : int = 1
-export var clickAmount : int
+onready var game = get_node("/root/Game")
+var baseCost = 10
+var currentLevel : int
 
 func _ready():
 	# load settings from save file maybe?
-	clickAmount = initialClickAmount
-	$Label.text = "Click For +" + str(clickAmount) + " Point(s)"
+	$Label.text = "Click For +" + str(BaseValues.ownedClickers) + " Point(s)\n" +\
+		"Level: " + str(BaseValues.ownedClickers)
+
+func _process(_delta):
+	$Label.text = "Click For +" + str(BaseValues.ownedClickers) + " Point(s)\n" +\
+		"Level: " + str(BaseValues.ownedClickers)
 
 func OnClick():
-	currentPoints += clickAmount
+	game.currentPoints += BaseValues.ownedClickers
+
+func CalculateCost():
+	return baseCost * pow(BaseValues.MULTIPLIER, currentLevel)

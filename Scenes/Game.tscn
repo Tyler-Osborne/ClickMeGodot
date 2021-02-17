@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Images/Black_Background.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/Clicker.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Fonts/Kenney Blocks.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/ClickUpgrade.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/AutoUpgrade.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 3 )
@@ -23,7 +25,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+[node name="ClickColumn" type="VBoxContainer" parent="UI"]
 margin_left = 45.0
 margin_top = 27.0
 margin_right = 235.0
@@ -33,11 +35,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Clicker" parent="UI/VBoxContainer" instance=ExtResource( 2 )]
+[node name="Clicker" parent="UI/ClickColumn" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 190.0
 margin_bottom = 49.0
+
+[node name="ClickUpgrade" parent="UI/ClickColumn" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 64.0
+margin_right = 190.0
+margin_bottom = 113.0
+
+[node name="UpgradeColumn" type="VBoxContainer" parent="UI"]
+margin_left = 784.0
+margin_top = 27.0
+margin_right = 974.0
+margin_bottom = 140.0
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AutoUpgrade" parent="UI/UpgradeColumn" instance=ExtResource( 6 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 190.0
+margin_bottom = 49.0
+disabled = true
 
 [node name="Points" type="RichTextLabel" parent="UI"]
 margin_left = 384.0
