@@ -10,7 +10,7 @@
 name: 'Publish to GitHub Pages'
 
 env:
-  GODOT_VERSION: 3.2.2 # Remember to manually set image to this version below.
+  GODOT_VERSION: 3.2.3 # Remember to manually set image to this version below.
 
 on:
   workflow_dispatch:
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-18.04
 
     container:
-      image: barichello/godot-ci:3.2.2
+      image: barichello/godot-ci:3.2.3
 
     steps:
       - name: Checkout
