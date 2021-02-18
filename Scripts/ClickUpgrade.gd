@@ -1,6 +1,6 @@
 extends TextureButton
 
-onready var game = get_node("/root/Game")
+# onready var game = get_node("/root/Game")
 var baseCost = 10
 var currentLevel : int
 
@@ -12,16 +12,16 @@ func _process(_delta):
 	$Label.text = "Upgrade Cost: " + str(CalculateCost())
 
 func OnClick():
-	if (game.currentPoints >= CalculateCost()):
+	if (Persist.currentPoints >= CalculateCost()):
 		Upgrade()
 
 func Upgrade():
-	game.currentPoints -= CalculateCost()
-	BaseValues.ownedClickers += 1
+	Persist.currentPoints -= CalculateCost()
+	Persist.ownedClickers += 1
 
 
 func CalculateCost():
-	if (BaseValues.ownedClickers == 1):
-		return 10
+	if (Persist.ownedClickers == 1):
+		return baseCost
 
-	return ceil(baseCost * pow(BaseValues.MULTIPLIER, BaseValues.ownedClickers))
+	return ceil(baseCost * pow(BaseValues.MULTIPLIER, Persist.ownedClickers))

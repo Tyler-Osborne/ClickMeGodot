@@ -1,7 +1,7 @@
 extends TextureButton
 
-onready var game = get_node("/root/Game")
-var baseCost = 100
+# onready var game = get_node("/root/Game")
+var baseCost = 50
 var currentLevel : int
 
 func _ready():
@@ -9,24 +9,24 @@ func _ready():
 	$Label.text = "Purchase Cost: " + str(CalculateCost())
 
 func _process(_delta):
-	if (BaseValues.ownedAutos > 0):
-		$Label.text = str(BaseValues.ownedAutos) + " Points/s\n" + \
+	if (Persist.ownedAutos > 0):
+		$Label.text = str(Persist.ownedAutos) + " Points/s\n" + \
 			"Upgrade Cost: " + str(CalculateCost())
 
 func OnClick():
-	if (game.currentPoints >= CalculateCost()):
+	if (Persist.currentPoints >= CalculateCost()):
 		Upgrade()
 
 func Upgrade():
-	game.currentPoints -= CalculateCost()
-	BaseValues.ownedAutos += 1
+	Persist.currentPoints -= CalculateCost()
+	Persist.ownedAutos += 1
 
 
 func CalculateCost():
-	if (BaseValues.ownedAutos == 0):
-		return 100
+	if (Persist.ownedAutos == 0):
+		return baseCost
 
-	return ceil(baseCost * pow(BaseValues.MULTIPLIER, BaseValues.ownedAutos))
+	return ceil(baseCost * pow(BaseValues.MULTIPLIER, Persist.ownedAutos))
 
 func _on_Timer_timeout():
-	game.currentPoints += BaseValues.ownedAutos
+	Persist.currentPoints += Persist.ownedAutos

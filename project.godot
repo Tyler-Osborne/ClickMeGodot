@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 BaseValues="*res://Scripts/base_values.gd"
+Persist="*res://Scripts/persist.gd"
 
 [display]
 
