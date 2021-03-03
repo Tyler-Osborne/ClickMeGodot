@@ -16,6 +16,8 @@ func _ready():
 	cps = AutoData.AutoClickData[index].CPS
 	Persist.ownedAutos += 1
 	$Label.text = "Purchase Cost: " + str(CalculateCost())
+	var timer = get_node("/root/Game/Timer")
+	timer.connect("timeout", self, "_on_Timer_timeout")
 
 func _process(_delta):
 	if AutoData.AutoClickData[index].Amount == currentThreshold and \
