@@ -1,0 +1,8 @@
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'Assets/**'
+      - 'Scenes/**'
+      - 'Scripts/**'
