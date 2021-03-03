@@ -6,6 +6,7 @@ on:
       - 'Assets/**'
       - 'Scenes/**'
       - 'Scripts/**'
+      - '.github/**'
 
 jobs:
   export_game:
