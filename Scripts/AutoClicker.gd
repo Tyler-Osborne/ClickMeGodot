@@ -16,10 +16,10 @@ func _ready():
 	cps = AutoData.AutoClickData[index].CPS
 	Persist.ownedAutos += 1
 	$Label.text = "Purchase Cost: " + str(CalculateCost())
-	var timer = get_node("/root/Game/Timer")
-	timer.connect("timeout", self, "_on_Timer_timeout")
+	# var timer = get_node("/root/Game/Timer")
+	# timer.connect("timeout", self, "_on_Timer_timeout")
 
-func _process(_delta):
+func _process(delta):
 	if AutoData.AutoClickData[index].Amount == currentThreshold and \
 		BaseValues.multiThreshold[currentThresholdIndex] == currentThreshold:
 		currentThresholdIndex += 1
@@ -27,6 +27,7 @@ func _process(_delta):
 	if (Persist.ownedAutos > 0):
 		$Label.text = str(CalcPoints()) + " Points/s\n" + \
 			"Upgrade Cost: " + str(CalculateCost())
+		Persist.currentPoints += CalcPoints() * delta
 
 func OnClick():
 	if (Persist.currentPoints >= CalculateCost()):
@@ -48,4 +49,5 @@ func CalcPoints():
 	return cps * AutoData.AutoClickData[index].Amount * pow(2, currentThresholdIndex)
 
 func _on_Timer_timeout():
-	Persist.currentPoints += CalcPoints()
+	#Persist.currentPoints += CalcPoints()
+	pass
