@@ -20,8 +20,18 @@ func Upgrade():
 	Persist.ownedClickers += 1
 
 
-func CalculateCost():
+func CalculateCost():	
 	if (Persist.ownedClickers == 1):
 		return baseCost
+	
+	var metThresh = 0
+	var costMulti = 1
 
-	return ceil(baseCost * pow(BaseValues.MULTIPLIER, Persist.ownedClickers))
+	for thresh in BaseValues.multiThreshold:
+		if (Persist.ownedClickers >= thresh):
+			metThresh += 1
+			costMulti = pow(2, metThresh)
+		else:
+			break
+
+	return ceil((baseCost * pow(BaseValues.MULTIPLIER, Persist.ownedClickers) / costMulti))

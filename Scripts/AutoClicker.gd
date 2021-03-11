@@ -1,6 +1,5 @@
 extends TextureButton
 
-# onready var game = get_node("/root/Game")
 var index : int
 var baseCost : int
 var cps : int
@@ -16,8 +15,6 @@ func _ready():
 	cps = AutoData.AutoClickData[index].CPS
 	Persist.ownedAutos += 1
 	$Label.text = "Purchase Cost: " + str(CalculateCost())
-	# var timer = get_node("/root/Game/Timer")
-	# timer.connect("timeout", self, "_on_Timer_timeout")
 
 func _process(delta):
 	if AutoData.AutoClickData[index].Amount == currentThreshold and \
@@ -27,6 +24,7 @@ func _process(delta):
 	if (Persist.ownedAutos > 0):
 		$Label.text = str(CalcPoints()) + " Points/s\n" + \
 			"Upgrade Cost: " + str(CalculateCost())
+		$Level.text = "Level: " + str(AutoData.AutoClickData[index].Amount)
 		Persist.currentPoints += CalcPoints() * delta
 
 func OnClick():
@@ -41,13 +39,18 @@ func Upgrade():
 func CalculateCost():
 	if (AutoData.AutoClickData[index].Amount == 0):
 		return baseCost
-
-	return round(baseCost * pow(BaseValues.MULTIPLIER, AutoData.AutoClickData[index].Amount))
+	
+	var metThresh = 0
+	var costMulti = 1
+	
+	for thresh in BaseValues.multiThreshold:
+		if (Persist.ownedClickers >= thresh):
+			metThresh += 1
+			costMulti = pow(2, metThresh)
+		else:
+			break
+	
+	return ceil((baseCost * pow(BaseValues.MULTIPLIER, AutoData.AutoClickData[index].Amount)) / costMulti)
 
 func CalcPoints():
-	# print(cps * AutoData.AutoClickData[index].Amount * pow(2, currentThresholdIndex))
 	return cps * AutoData.AutoClickData[index].Amount * pow(2, currentThresholdIndex)
-
-func _on_Timer_timeout():
-	#Persist.currentPoints += CalcPoints()
-	pass
