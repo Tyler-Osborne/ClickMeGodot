@@ -1,1 +1,8 @@
+res://Scripts/Game.gd
+res://Scripts/AutoClicker.gd
 res://Scenes/Game.tscn
+res://Scenes/Clicker.tscn
+res://Scenes/ClickUpgrade.tscn
+res://Scripts/PointsPerSecond.gd
+res://Scripts/Points.gd
+res://Scripts/persist.gd

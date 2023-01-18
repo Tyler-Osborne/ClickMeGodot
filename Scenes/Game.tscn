@@ -1,31 +1,36 @@
-[gd_scene load_steps=7 format=3 uid="uid://be1yn2vqr3bdj"]
+[gd_scene load_steps=6 format=3 uid="uid://be1yn2vqr3bdj"]
 
-[ext_resource type="Texture2D" uid="uid://c3uaq61qkxwb8" path="res://Assets/Images/Black_Background.jpg" id="1"]
-[ext_resource type="PackedScene" path="res://Scenes/Clicker.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://bt6lea2q7s7ib" path="res://Scenes/Clicker.tscn" id="2"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="4"]
-[ext_resource type="PackedScene" path="res://Scenes/ClickUpgrade.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://diih47y088u23" path="res://Scenes/ClickUpgrade.tscn" id="5"]
 [ext_resource type="Script" path="res://Scripts/Points.gd" id="6"]
 [ext_resource type="Script" path="res://Scripts/PointsPerSecond.gd" id="7"]
 
 [node name="Game" type="Node"]
 script = ExtResource("4")
 
-[node name="Background" type="Sprite2D" parent="."]
-scale = Vector2(1, 0.776321)
-texture = ExtResource("1")
-centered = false
-
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 1024.0
-offset_bottom = 600.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Points" type="RichTextLabel" parent="UI"]
 layout_mode = 0
-offset_left = 256.0
+offset_left = 360.0
 offset_top = 40.0
-offset_right = 768.0
+offset_right = 872.0
 offset_bottom = 104.0
 size_flags_vertical = 2
 bbcode_enabled = true
@@ -35,9 +40,9 @@ script = ExtResource("6")
 [node name="PointsPerSecond" type="RichTextLabel" parent="UI"]
 visible = false
 layout_mode = 0
-offset_left = 256.0
+offset_left = 360.0
 offset_top = 128.0
-offset_right = 768.0
+offset_right = 872.0
 offset_bottom = 192.0
 size_flags_vertical = 2
 bbcode_enabled = true
@@ -45,11 +50,11 @@ text = "Pts/S: 0"
 script = ExtResource("7")
 
 [node name="ClickColumn" type="VBoxContainer" parent="UI"]
-layout_mode = 0
-offset_left = 45.0
-offset_top = 27.0
-offset_right = 235.0
-offset_bottom = 76.0
+layout_mode = 1
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 238.0
+offset_bottom = 150.0
 
 [node name="Clicker" parent="UI/ClickColumn" instance=ExtResource("2")]
 layout_mode = 2
@@ -58,11 +63,15 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="AutoClickColumn" type="VBoxContainer" parent="UI"]
-layout_mode = 0
-offset_left = 784.0
-offset_top = 27.0
-offset_right = 974.0
-offset_bottom = 227.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -256.0
+offset_top = 48.0
+offset_right = -66.0
+offset_bottom = 248.0
+grow_horizontal = 0
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

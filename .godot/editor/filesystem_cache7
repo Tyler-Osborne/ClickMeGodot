@@ -1,10 +1,10 @@
 0b7126e0c6e86d3ec295a72f5aa6e0bd
-::res://::1674060143
+::res://::1674060443
 default_env.tres::Environment::-1::1674060132::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1672241818::0::1::::<><>::
 icon.png::CompressedTexture2D::5114935387388861095::1672241818::1674060148::1::::<><>::
 ::res://Assets/::1672241818
-::res://Assets/Fonts/::1672241818
+::res://Assets/Fonts/::1674060147
 Kenney Blocks.ttf::FontFile::7396275994169110255::1672241818::1674060147::1::::<><>::
 Kenney Future Narrow.ttf::FontFile::1689947122785690200::1672241818::1674060147::1::::<><>::
 Kenney Future.ttf::FontFile::8335950867535628477::1672241818::1674060147::1::::<><>::
@@ -16,7 +16,7 @@ Kenney Pixel Square.ttf::FontFile::7761872144165382545::1672241818::1674060147::
 Kenney Pixel.ttf::FontFile::1214635367074652651::1672241818::1674060147::1::::<><>::
 Kenney Rocket Square.ttf::FontFile::4961843130894596978::1672241818::1674060147::1::::<><>::
 Kenney Rocket.ttf::FontFile::157488674454685985::1672241818::1674060147::1::::<><>::
-::res://Assets/Images/::1672241818
+::res://Assets/Images/::1674060148
 Black_Background.jpg::CompressedTexture2D::6779446786164811635::1672241818::1674060148::1::::<><>::
 blue_boxCheckmark.png::CompressedTexture2D::5690781082163800321::1672241818::1674060148::1::::<><>::
 blue_boxCross.png::CompressedTexture2D::2882731772414195139::1672241818::1674060148::1::::<><>::
@@ -164,11 +164,11 @@ yellow_sliderLeft.png::CompressedTexture2D::5815895877070341096::1672241818::167
 yellow_sliderRight.png::CompressedTexture2D::1653881179909700219::1672241818::1674060148::1::::<><>::
 yellow_sliderUp.png::CompressedTexture2D::2210283511532454850::1672241818::1674060148::1::::<><>::
 yellow_tick.png::CompressedTexture2D::672910103787334515::1672241818::1674060148::1::::<><>::
-::res://Scenes/::1672241842
+::res://Scenes/::1674060163
 AutoClicker.tscn::PackedScene::-1::1674060132::0::1::::<><>::res://Scenes/ClickUpgrade.tscn<>res://Scripts/AutoClicker.gd
 Clicker.tscn::PackedScene::-1::1674060132::0::1::::<><>::res://Assets/Images/blue_button00.png<>res://Assets/Images/blue_button02.png<>res://Scripts/Clicker.gd
 ClickUpgrade.tscn::PackedScene::-1::1674060132::0::1::::<><>::res://Scenes/Clicker.tscn<>res://Scripts/ClickUpgrade.gd
-Game.tscn::PackedScene::-1::1674060132::0::1::::<><>::res://Assets/Images/Black_Background.jpg<>res://Scenes/Clicker.tscn<>res://Assets/Fonts/Kenney Blocks.ttf<>res://Scripts/Game.gd<>res://Scenes/ClickUpgrade.tscn<>res://Scripts/Points.gd<>res://Scripts/PointsPerSecond.gd
+Game.tscn::PackedScene::2722331754320076451::1674060163::0::1::::<><>::uid://c3uaq61qkxwb8<>res://Scenes/Clicker.tscn<>res://Scripts/Game.gd<>res://Scenes/ClickUpgrade.tscn<>res://Scripts/Points.gd<>res://Scripts/PointsPerSecond.gd
 ::res://Scripts/::1672241942
 AutoClicker.gd::GDScript::-1::1674060132::0::1::::<>TextureButton<>::
 AutoData.gd::GDScript::-1::1674060132::0::1::::<>Node<>::
