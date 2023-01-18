@@ -5,8 +5,8 @@ extends Node
 # {"BaseCost", "CPS"}
 
 var AutoClickData = \
-    [
-        {"BaseCost": 50, "CPS": 1, "Amount": 0},
-        {"BaseCost": 500, "CPS": 10, "Amount": 0},
-        {"BaseCost": 5000, "CPS": 100, "Amount": 0}
-    ]
+	[
+		{"BaseCost": 50, "CPS": 1, "Amount": 0},
+		{"BaseCost": 500, "CPS": 10, "Amount": 0},
+		{"BaseCost": 5000, "CPS": 100, "Amount": 0}
+	]
