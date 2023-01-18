@@ -7,16 +7,16 @@
 script = ExtResource( 2 )
 
 [node name="Label" parent="." index="0"]
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 192.0
-margin_bottom = 48.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 192.0
+offset_bottom = 48.0
 autowrap = true
 
 [node name="Level" type="Label" parent="." index="1"]
-margin_top = 49.0
-margin_right = 192.0
-margin_bottom = 80.0
+offset_top = 49.0
+offset_right = 192.0
+offset_bottom = 80.0
 text = "Level: 0"
 align = 1
 valign = 1

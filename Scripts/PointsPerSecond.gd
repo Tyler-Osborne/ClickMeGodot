@@ -10,4 +10,4 @@ func _process(_delta):
 		for ac in autoClicks:
 			pps += ac.CalcPoints()
 
-		bbcode_text = "[center]Pts/S: " + str(round(pps)) + "[center]"
+		text = "[center]Pts/S: " + str(round(pps)) + "[center]"
