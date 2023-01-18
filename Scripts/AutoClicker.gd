@@ -1,5 +1,6 @@
 extends TextureButton
 
+class_name AutoClicker
 var index : int
 var baseCost : int
 var cps : int
